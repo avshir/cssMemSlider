@@ -33,19 +33,23 @@ h1 {
 }
 .css-slider__container {
 }
+.css-slider input {
+	display: none;
+}
 .css-slider__images {
 	display: flex;
 	width: 100%;
 	height: 300px;
 	overflow: hidden;
-
 }
 .css-slider__image {
 	flex: 0 0 100%;
 	border-radius: 5px;
 	/* height: 300px; */
-
+	opacity: 0;
+	transition: opacity 1.5s, margin-left 1s;
 }
+
 .css-slider__image img {
 	display: block;
 	border-radius: 5px;
@@ -56,24 +60,100 @@ h1 {
 	height: 100%;
 	object-fit: cover;
 }
+
 .css-slider__row {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+/* ============================= */
+.css-slider__subtitls {
+	flex: 0 0 80%;
+	height: 70px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	color: #fff;
+	overflow: hidden;
+}
+.css-slider__subtitle {
+	line-height: 50px;
+	width: 100%;
+}
 .css-slider__pagination {
-	flex: 1 1 20%;
+	flex: 0 1 20%;
 	display: flex;
 	justify-content: space-between;
 }
+
+.nav-btn{
+	height: 18px;
+	width: 18px;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 10px 4px;
+	padding: 4px;
+	cursor: pointer;
+
+	transition: 0.3s;
+}
+
+input#bullet-1:checked ~ #img-1,
+input#bullet-2:checked ~ #img-2,
+input#bullet-3:checked ~ #img-3,
+input#bullet-4:checked ~ #img-4 {
+	opacity: 1;
+}
+
+input#bullet-1:checked ~ #img-1 {
+	margin-left: 0%;
+}
+input#bullet-2:checked ~ #img-2 {
+	margin-left: -100%;
+}
+input#bullet-3:checked ~ #img-3 {
+	margin-left: -200%;
+}
+input#bullet-4:checked ~ #img-4 {
+	margin-left: -300%;
+}
+
+
+input#bullet-1:checked  .css-slider__subtitle--1 {
+	margin-top: 0px;
+	opacity: 1;
+}
+input#bullet-2:checked#subtitls#subtitls-2 {
+	margin-top: -50px;
+	opacity: 1;
+	color: #900;
+}
+input#bullet-3:checked .css-slider__subtitle--3 {
+	margin-left: -100px;
+	opacity: 1;
+	color: #900;
+}
+input#bullet-4:checked  ~ .css-slider__subtitle--4 {
+	margin-left: -150px;
+	opacity: 1;
+}
+
+input#bullet-1:checked .nav-btns label.nav-btn--1,
+input#bullet-2:checked .nav-btns label.nav-btn--2,
+input#bullet-3:checked .nav-btns label.nav-btn--3,
+input#bullet-4:checked .nav-btns label.nav-btn--4 {
+	/* background: rgba(0, 0, 0, 0.8); */
+	background: #900;
+}
+
+/* ========= v-1 ========== */
 .css-slider__buttons {
+	display: none;
 	display: flex;
 	justify-content: space-between;
-}
-.css-slider input {
-	display: none;
 }
 .css-slider__btn {
+	display: none;
 	cursor: pointer;
 	margin: 5px;
 	padding: 5px;
@@ -84,25 +164,11 @@ h1 {
 
 	transition: 0.3s;
 }
-a:hover {
+.css-slider__btn:hover {
 	background-color: #900;
 }
 .css-slider__btn:active{
 	background-color: #fff;
-}
-
-.css-slider__subtitls {
-	flex: 0 0 80%;
-	height: 70px;
-	display: flex;
-	flex-wrap: wrap;
-	padding: 20px;
-	color: #fff;
-	overflow: hidden;
-}
-.css-slider__subtitle {
-	line-height: 50px;
-	width: 100%;
 }
 /* для этого используются радиокнопки и сложные селекторы */
 /* ====== media ====== */
