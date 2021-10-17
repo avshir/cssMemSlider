@@ -27,7 +27,7 @@ h1 {
 	height: 400px;
 	border-radius: 5px;
 	margin: 20px auto;
-	padding: 20px 30px;
+	padding: 30px 30px;
 	background-color: #404040;
 
 }
@@ -81,26 +81,6 @@ input#bullet-4:checked ~ .css-slider__images #img-4 {
 	margin-left: -300%;
 	}
 
-/* input#bullet-1:checked ~ #img-1,
-input#bullet-2:checked ~ #img-2,
-input#bullet-3:checked ~ #img-3,
-input#bullet-4:checked ~ #img-4 {
-	opacity: 1;
-}
-
-input#bullet-1:checked ~ #img-1 {
-	margin-left: 0%;
-}
-input#bullet-2:checked ~ #img-2 {
-	margin-left: -100%;
-}
-input#bullet-3:checked ~ #img-3 {
-	margin-left: -200%;
-}
-input#bullet-4:checked ~ #img-4 {
-	margin-left: -300%;
-} */
-
 /* ============================= */
 .css-slider__row {
 	display: flex;
@@ -121,22 +101,7 @@ input#bullet-4:checked ~ #img-4 {
 	line-height: 50px;
 	width: 100%;
 	opacity: 0;
-	transition: opacity 1.5s, margin 0s;
-}
-.css-slider__pagination {
-	flex: 0 1 20%;
-	display: flex;
-	justify-content: space-between;
-}
-
-.nav-btn{
-	height: 18px;
-	width: 18px;
-	border-radius: 50%;
-	background-color: rgba(0, 0, 0, 0.5);
-	margin: 10px 4px;
-	padding: 4px;
-	cursor: pointer;
+	transition: opacity 2s ease-in-out, margin 0s;
 }
 
 input#bullet-1:checked ~ .css-slider__row .css-slider__subtitle--1,
@@ -158,13 +123,56 @@ input#bullet-3:checked ~ .css-slider__row .css-slider__subtitle--3 {
 input#bullet-4:checked ~ .css-slider__row .css-slider__subtitle--4 {
 	margin-top: -150px;
 }
+/* ====== navigation ====== */
+.css-slider__pagination {
+	flex: 0 1 20%;
+	display: flex;
+	justify-content: space-between;
+}
+.css-slider__row .nav-btn{
+	height: 18px;
+	width: 18px;
+	border-radius: 50%;
+	margin: 10px 4px;
+	padding: 4px;
+	background-color: #4deeee;
+	border: 2px solid #4deeee;
+	cursor: pointer;
+}
 
-input#bullet-1:checked .nav-btns label.nav-btn--1,
-input#bullet-2:checked .nav-btns label.nav-btn--2,
-input#bullet-3:checked .nav-btns label.nav-btn--3,
-input#bullet-4:checked .nav-btns label.nav-btn--4 {
-	/* background: rgba(0, 0, 0, 0.8); */
-	background: #900;
+/* увеличиваем обалсть нажатия кнопки */
+.css-slider__row .nav-btn:before {
+	display: block;
+	position: relative;
+	top: -10px;
+	left: -10px;
+	content: "";
+	width: 30px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: transparent;
+}
+.css-slider__row .nav-btn:hover {
+	background-color: #fff;
+	border: 2px solid #fff;
+}
+.css-slider__row .nav-btn:active {
+	background-color: transparent;
+	border: 2px solid #fff;
+}
+
+input#bullet-1:checked ~ .css-slider__row .nav-btn--1,
+input#bullet-2:checked ~ .css-slider__row .nav-btn--2,
+input#bullet-3:checked ~ .css-slider__row .nav-btn--3,
+input#bullet-4:checked ~ .css-slider__row .nav-btn--4 {
+	background-color: transparent;
+	border: 2px solid #4deeee;
+}
+input#bullet-1:checked ~ .css-slider__row .nav-btn--1:hover,
+input#bullet-2:checked ~ .css-slider__row .nav-btn--2:hover,
+input#bullet-3:checked ~ .css-slider__row .nav-btn--3:hover,
+input#bullet-4:checked ~ .css-slider__row .nav-btn--4:hover {
+	border: 2px solid #fff;
 }
 
 /* ========= v-1 ========== */
@@ -191,7 +199,6 @@ input#bullet-4:checked .nav-btns label.nav-btn--4 {
 .css-slider__btn:active{
 	background-color: #fff;
 }
-/* для этого используются радиокнопки и сложные селекторы */
 /* ====== media ====== */
 @media (max-width:767px){
 }
