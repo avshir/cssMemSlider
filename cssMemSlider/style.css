@@ -1,3 +1,6 @@
+html, body {
+	height: 100%;
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -9,27 +12,28 @@ html{
 body {
 	background-color: #c4c4c4;
 	font-size: 16px;
-	line-height: 30px;
+	line-height: 1.4;
+	color: #2d2f31;
 }
 .container {
 	max-width: 1040px;
-	margin: 40px auto;
+	margin: 0 auto;
 	padding: 0 20px;
 }
 h1 {
-	font-size: 32px;
-	margin: 0 0 20px 0;
+	font-size: 28px;
+	margin: 20px 0;
 	text-align: center;
 }
 .css-slider {
 	position: relative;
-	width: 600px;
-	height: 400px;
+	max-width: 650px;
+	height: 430px;
 	border-radius: 5px;
-	margin: 20px auto;
+	margin: 0 auto 20px auto;
 	padding: 30px 30px;
 	background-color: #404040;
-
+	overflow: hidden;
 }
 .css-slider__container {
 }
@@ -45,7 +49,6 @@ h1 {
 .css-slider__image {
 	flex: 0 0 100%;
 	border-radius: 5px;
-	/* height: 300px; */
 	opacity: 0;
 	transition: opacity 1.5s, margin-left 1s;
 }
@@ -85,22 +88,26 @@ input#bullet-4:checked ~ .css-slider__images #img-4 {
 .css-slider__row {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
+	margin: 15px 0 0 0;
 }
 .css-slider__subtitls {
 	flex: 0 0 80%;
-	height: 70px;
+	height: 80px;
 	display: flex;
 	flex-wrap: wrap;
-	padding: 10px;
+	padding: 0 20px 0 0;
 	color: #fff;
 	overflow: hidden;
 }
 .css-slider__subtitle {
-	font-size: 16px;
-	line-height: 50px;
+	height: 70px;
+	font-size: 18px;
+	line-height: 1.6;
 	width: 100%;
 	opacity: 0;
+	padding: 5px 0 0 0;
+
 	transition: opacity 2s ease-in-out, margin 0s;
 }
 
@@ -115,13 +122,13 @@ input#bullet-1:checked ~ .css-slider__row .css-slider__subtitle--1 {
 	margin-top: 0px;
 }
 input#bullet-2:checked ~ .css-slider__row .css-slider__subtitle--2 {
-	margin-top: -50px;
+	margin-top: -70px;
 }
 input#bullet-3:checked ~ .css-slider__row .css-slider__subtitle--3 {
-	margin-top: -100px;
+	margin-top: -140px;
 }
 input#bullet-4:checked ~ .css-slider__row .css-slider__subtitle--4 {
-	margin-top: -150px;
+	margin-top: -210px;
 }
 /* ====== navigation ====== */
 .css-slider__pagination {
@@ -199,8 +206,80 @@ input#bullet-4:checked ~ .css-slider__row .nav-btn--4:hover {
 .css-slider__btn:active{
 	background-color: #fff;
 }
-/* ====== media ====== */
-@media (max-width:767px){
+/* ---footer--- */
+.footer {
+	background-color: #4deeee;
 }
-@media (max-width:420px){
+
+.footer__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.footer__links a {
+  display: inline-block;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 18px;
+	color: #2d2f31;
+}
+
+.footer__link-rss img {
+  width: 80px;
+}
+
+.footer__link-github span {
+  position: relative;
+  top: 6px;
+
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.footer__link-github img {
+  max-width: 100%;
+}
+
+/* ---/footer--- */
+/* ====== media ====== */
+@media (max-width:768px){
+	.container {
+		max-width: 768px;
+		padding: 0 15px;
+	}
+	h1 {
+		font-size: 24px;
+		margin: 0 0 15px 0;
+	}
+	.css-slider {
+		height: 450px;
+		padding: 20px 20px;
+	}
+
+	.css-slider__row {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+	.css-slider__subtitle{
+		font-size: 16px;
+	}
+	.footer__links {
+    padding: 15px 0;
+  }
+  .footer__link-rss img {
+    width: 60px;
+  }
+  .footer__link-github span {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width:460px){
+	.css-slider__images {
+		height: 270px;
+	}
 }
